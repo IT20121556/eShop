@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf-extras-springsecurity5">
+<head th:replace="fragments :: page_head('Home - eShop Admin Panel')"/>
+<body class="d-flex flex-column min-vh-100">
+<!-- Navigation -->
+<div th:replace="navigation :: menu"/>
+
+<!-- Heading Styling -->
+<div class="container-fluid">
+    <div class="text-center">
+        <h1>eShop Admin Control Panel</h1>
+        Welcome
+        <a th:href="@{/account}" sec:authentication="principal.fullname"></a>
+        <span sec:authentication="principal.authorities"></span>
+    </div>
+</div>
+
+<!-- Footer -->
+<div th:replace="fragments :: footer"/>
+</body>
+
+</html>

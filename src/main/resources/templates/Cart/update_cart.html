@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div   th:each="ucart: ${cart}">
+<form  th:action="'http://localhost:8080/eshop/cart/'+${ucart.userId}+'/'+${ucart.cartId}+'/sucess'"  method="post" >
+<h1>Update Cart</h1>
+<table   >
+<tr><td ></td><td><input     type="hidden"    name="cartId"         th:value="${ucart.cartId}" readonly="readonly"/></td></tr>
+ <tr><td></td><td><input     type="hidden"    name="userId" readonly="readonly"        th:value="${ucart.userId}"  /></td></tr>
+<tr><td>Product Name</td><td><input type="text"    name="productName"  readonly="readonly"   th:value="${ucart.productName}" /></td></tr>
+<tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+<tr><td>Description</td><td><input  type="text"    name="description" readonly="readonly"   th:value="${ucart.description}" /></td></tr>
+<tr><td>List Price</td><td><input     type="text" id="listprice" readonly="readonly"   name="listprice"            th:value="${ucart.listprice}" /></td></tr>
+<tr><td>Quantity</td><td><input     type="text" id="qty"    name="qty"      onblur="reSum();"  onfocusout="num()"    th:value="${ucart.qty}" /></td></tr>
+<tr><td>Price</td><td><input        type="text"    name="price" id="price"   readonly="readonly"       th:value="${ucart.price}" /></td></tr>
+<tr><td><input type="submit" value="Update Cart" class="btn btn-success"/></td> <td><button class="btn btn-danger">Cancel</button></td></tr>
+</table>
+</form >
+</div>
+
+</body>
+<script type="text/javascript">
+function num()
+{
+	let qty=document.getElementById("qty").value;
+	if(isNaN(qty))
+		{
+		alert("Quantity Should be a Number");
+		}
+	
+	}
+function reSum()
+{
+    var num1 = parseInt(document.getElementById("listprice").value);
+    var num2 = parseInt(document.getElementById("qty").value);
+    document.getElementById("price").value = num1 * num2;
+}
+
+
+</script>
+<style>
+body {
+    text-align: center;
+    background-image: url("2483952.png");
+}
+form {
+margin-top:100px;
+    display: inline-block;
+}
+
+</style>
+</html>
+	

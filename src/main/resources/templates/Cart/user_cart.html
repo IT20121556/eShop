@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+ <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2
+    }
+
+    th {
+      background-color: #04AA6D;
+      color: white;
+    }
+  </style>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="ISO-8859-1">
+    <title>Insert title here</title>
+</head>
+
+<body>
+<br>
+<br>
+<br>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12">
+            <h1 style="margin-left: 40%;">Cart Items</h1>
+            <br>
+                <table>
+                    <tr>
+                        <th>
+                            Product Name
+                        </th>
+                        <th>
+                            Description
+                        </th>
+                        <th>
+                            Quantity
+                        </th>
+                        <th>
+                            List Price
+                        </th>
+                        <th>
+                            Price
+                        </th>
+                         <th>
+                            Actions
+                        </th>
+                    </tr>
+                    <tr th:each="allitems : ${cartdetails}">
+                        <td th:text="${allitems.productName}"> </td>
+                        <td th:text="${allitems.description}"> </td>
+                        <td th:text="${allitems.qty}"> </td>
+                        <td th:text="${allitems.listprice}"> </td>
+                        <td th:text="${allitems.price}"> </td>
+                        <td>
+                            <a th:href="'http://localhost:8080/eshop/cart/'+${allitems.userId}+'/'+${allitems.cartId}+'/updateCart'"
+                                class="btn btn-primary">Update</a>
+                            <a th:href="'http://localhost:8080/eshop/customer/cart/'+${allitems.userId}+'/'+${allitems.cartId}+'/'"
+                                class="btn btn-danger">Delete</a>
+
+                        </td>
+                    </tr>
+
+                </table>
+                 <br><br><br><br><br>
+                <div style="margin-left: 30px">
+              <a class="btn btn-primary" th:href="'http://localhost:8080/eshop/customer/products/'+${userid}+'/checkout'"> Checkout</a>
+            </div>
+            </div>
+           
+            
+        </div>
+
+    </div>
+
+</body>
+
+</html>

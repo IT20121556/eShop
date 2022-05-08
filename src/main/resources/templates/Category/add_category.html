@@ -1,0 +1,77 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form method="post" action="http://localhost:8080/eshop/category/addnew/success">
+<table>
+<tr>
+<td>Category Name</td>
+<td><input type="text" required="required" name="category_name" /></td>
+</tr>
+
+<tr>
+<td>Alias</td>
+<td><input type="text" required="required" name="Alias" /></td>
+</tr>
+
+<tr>
+<td>Enabled</td>
+<td><select name="enabled" id="enabled">
+<option value="1">Enabled</option>
+<option value="0">Disabled</option>
+</select></td>
+</tr>
+</table>
+<input type="submit" value="Save"/>
+</form>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form</title>
+<link rel="stylesheet" th:href="@{/styles/category_style.css}">
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="title">
+      Add category
+    </div>
+	<form method="post" action="http://localhost:8080/eshop/category/addnew/success">
+	
+    <div class="form">
+       <div class="inputfield">
+          <label> Category Name</label>
+         
+		  <input type="text" required="required" name="category_name" />
+       </div>  
+        <div class="inputfield">
+          <label>Alias</label>
+		 <input type="text" required="required" name="Alias" />
+         
+       </div>  
+       <div class="inputfield">
+          <label>Enabled </label>
+        <select name="enabled" id="enabled">
+         <option value="1">Enabled</option>
+         <option value="0">Disabled</option>
+         </select>
+       </div>  
+      
+      <div class="inputfield">
+	  <input type="submit" class="form-control btn btn-primary" value="Save">
+        
+               
+      </div>
+    </div>
+</div>	
+	
+</body>
+</html>

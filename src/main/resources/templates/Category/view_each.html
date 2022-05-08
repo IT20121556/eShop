@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<table>
+<tr><td>Category ID :</td> <td th:text="${category.category_id}"> </td></tr>
+<tr><td>Category Name :</td> <td th:text="${category.category_name}"> </td></tr>
+<tr><td>Alias :</td> <td th:text="${category.Alias}"> </td></tr>
+<tr><td>Enabled :</td> <td ><span th:if="${category.enabled == 1}"> <input type="checkbox" checked="checked"/></span>
+ <span     th:unless="${category.enabled == 1}"> <input type="checkbox" /> </td></tr>
+
+</table>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" th:href="@{/styles/add_product_styles.css}">
+</head>
+<body>
+
+
+<script>
+    //Load Image File
+    var loadFile = function (event) {
+        var image = document.getElementById('output');
+        image.src = URL.createObjectURL(event.target.files[0]);
+    };
+
+    //cost validation
+    function cost_valid() {
+        let cost = document.getElementById("cost").value;
+        let msg;
+        if (isNaN(cost)) {
+            msg = "Cost Should Be a Number";
+            alert(msg);
+        } else if (cost < 1) {
+            msg = "Cost Should Be Greater than 1";
+            alert(msg);
+        }
+    }
+
+    //List Price Validation
+    function price_valid() {
+        let listPrice = document.getElementById("listPrice").value;
+        let msg;
+        if (isNaN(listPrice)) {
+            msg = "List Price Should Be a Number";
+            alert(msg);
+        } else if (listPrice < 1) {
+            msg = "List Price Should Be Greater than 1";
+            alert(msg);
+        }
+
+    }
+
+    //Discount Validation
+    function dis_valid() {
+        let discount = document.getElementById("discount").value;
+        let msg;
+        if (isNaN(discount)) {
+            msg = "Discount Should Be a Number";
+            alert(msg);
+        } else if (discount < 1) {
+            msg = "Discount Should Be Greater than 1";
+            alert(msg);
+        }
+
+    }
+
+</script>
+
+<div class="wrapper">
+    <div class="title">
+        Update Product
+    </div>
+    <form th:action="'http://localhost:8080/eshop/products/update/sucess/'+${product.productId}"
+          method="post" enctype="multipart/form-data">
+
+
+        <div class="form">
+            <div class="inputfield">
+                <label>Product Id</label>
+
+                <input class="form-control" type="text" required name="productId" readonly
+                       th:value="${product.productId}">
+            </div>
+
+
+            <div class="form">
+                <div class="inputfield">
+                    <label>Product Name</label>
+
+                    <input type="text" class="form-control" required name="productName"
+                           th:value="${product.productName}">
+                </div>
+                <div class="inputfield">
+                    <label>Brand</label>
+                    <select class="form-control" name="brand" id="brand"
+                            th:value="${product.brand}">
+                        <option value="AliExpress">AliExpress</option>
+                        <option value="Daraz">Daraz</option>
+                        <option value="Alibaba">Alibaba</option>
+                        <option value="Amazon">Amazon</option>
+                    </select>
+
+                </div>
+                <div class="inputfield">
+                    <label>Category </label>
+                    <select class="form-control" name="category" th:each="category : ${category}">
+                        <option th:value="${category.category_name}" th:text="${category.category_name}"></option>
+
+                    </select>
+<!--                    <td><input class="form-control" type="text" required="required" name="category"-->
+<!--                               th:value="${product.category}"></td>-->
+                </div>
+                <div class="inputfield">
+                    <label>Status</label>
+                    <select class="form-control" name="status" id="status">
+                        <option value="0">Not Available</option>
+                        <option value="1">Available</option>
+                    </select>
+                </div>
+                <div class="inputfield">
+                    <label>Cost</label>
+                    <div class="custom_select">
+                        <input class="form-control" type="text" onfocusout="cost_valid()" required="required"
+                               name="cost" id="cost"
+                               th:value="${product.cost}">
+                    </div>
+                </div>
+                <div class="inputfield">
+                    <label>List Price</label>
+                    <input class="form-control" type="text" required="required" name="listPrice"
+                           onfocusout="price_valid()" id="listPrice"
+                           th:value="${product.listPrice}">
+                </div>
+                <div class="inputfield">
+                    <label>Discount</label>
+                    <input class="form-control" type="text" required="required" name="discount" onfocusout="dis_valid()"
+                           id="discount"
+                           th:value="${product.discount}">
+                </div>
+                <div class="inputfield">
+                    <label>Image</label>
+                    <input required="required" type="file" onchange="loadFile(event)"
+                           th:name="imagefile">
+                    <p><img th:src="'http://localhost:8080/productphotos/'+${product.productId}+'.jpg'" id="output"
+                            width="80px" height="80px"/>
+                    </p>
+                </div>
+
+                <div class="inputfield">
+                    <label>Specification</label>
+                    <textarea style="resize: vertical;" class="form-control" type="text"
+                              required="required" name="specification"
+                              th:value="${product.specification}"></textarea>
+
+                </div>
+                <div class="inputfield">
+                    <label>Description</label>
+                    <textarea style="resize: vertical;" class="form-control" type="text" required="required"
+                              name="description" th:value="${product.description}"></textarea>
+
+                </div>
+
+
+                <div class="inputfield terms">
+                    <label class="check">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <p>Agreed to terms and conditions</p>
+                </div>
+                <div class="inputfield">
+
+                    <input type="submit" class="form-control btn btn-primary" value="Save">
+
+                </div>
+
+            </div>
+        </div>
+</div>
+
+</body>
+</html>

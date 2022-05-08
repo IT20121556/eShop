@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Shop - Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" th:href="@{/styles/style.css}" />
+
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar">
+      <ul class="links-container">
+        <li class="link-item"><a href="#" class="link active">Home</a></li>
+        <li class="link-item"><a th:href="'http://localhost:8080/eshop/customer/products/'+${customer_id}" class="link">Product</a></li>
+        <li class="link-item"><a th:href="'http://localhost:8080/eshop/cart/'+${customer_id}" class="link">Cart</a></li>
+        <li class="link-item"><a href="#" class="link">Contact</a></li>
+      </ul>
+    <!--   <div class="user-interactions">
+        <div class="cart">
+          <img th:src="@{/img/cart.png}" alt="cart-icon" class="cart-icon" />
+          <span class="cart-item-count">00</span>
+        </div>
+        <div class="user">
+          <img th:src="@{/img/user.png}" alt="user-icon" class="user-icon" />
+        </div>
+      </div> -->
+    </nav>
+
+    <!-- header -->
+    <header class="header-section">
+      <h1 class="header-heading"><span>premium</span> quality</h1>
+    </header>
+
+    <!-- best selling products section -->
+    <section class="best-selling-product-section">
+      <h1 class="section-title">best selling products</h1>
+      <div class="product-container">
+        <div class="product-card">
+          <img th:src="@{/img/product-1.png}" alt="productImg" class="product-img" />
+          <p class="product-name">lights ➡</p>
+        </div>
+        <div class="product-card">
+          <img th:src="@{/img/product-2.png}" alt="productImg" class="product-img" />
+          <p class="product-name">table ➡</p>
+        </div>
+        <div class="product-card">
+          <img th:src="@{/img/product-3.png}" alt="productImg" class="product-img" />
+          <p class="product-name">storage ➡</p>
+        </div>
+        <div class="product-card">
+          <img th:src="@{/img/product-4.png}" alt="productImg" class="product-img" />
+          <p class="product-name">sofa ➡</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- middle section -->
+    <section class="mid-section">
+      <div class="section-item-container">
+        <img th:src="@{/img/bg-2.png}" alt="midImg" class="section-bg" />
+        <div class="section-info">
+          <h1 class="title">
+            premium quality in <span>affordable</span> price
+          </h1>
+          <p class="info">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt
+            odit porro quia distinctio eum laboriosam!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- image collage section -->
+    <section class="image-mid-section">
+      <div class="image-collage">
+        <div class="image-collection">
+          <img th:src="@{/img/poster-1.png}" alt="Img1" class="collage-img" />
+          <img th:src="@{/img/poster-2.png}" alt="Img2" class="collage-img" />
+          <img th:src="@{/img/poster-3.png}" alt="Img3" class="collage-img" />
+        </div>
+      </div>
+    </section>
+
+    <!-- review section -->
+    <section class="review-section">
+      <h1 class="section-title">
+        what's our <span>customers</span> say about us
+      </h1>
+      <div class="review-container">
+        <div class="review-card">
+          <div class="user-dp" data-rating="4.9">
+            <img th:src="@{/img/user 1.png}" alt="user1" />
+          </div>
+          <h2 class="review-title">best quality more than my expectation</h2>
+          <p class="review">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque,
+            ullam odit modi nulla sequi eius.
+          </p>
+        </div>
+        <div class="review-card">
+          <div class="user-dp" data-rating="4.9">
+            <img th:src="@{/img/user 2.png}" alt="user2" />
+          </div>
+          <h2 class="review-title">on time delivery with best packagings</h2>
+          <p class="review">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque,
+            ullam odit modi nulla sequi eius.
+          </p>
+        </div>
+        <div class="review-card">
+          <div class="user-dp" data-rating="4.9">
+            <img th:src="@{/img/user 3.png}" alt="user3" />
+          </div>
+          <h2 class="review-title">very helpful customer support</h2>
+          <p class="review">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque,
+            ullam odit modi nulla sequi eius.
+          </p>
+        </div>
+        <div class="review-card">
+          <div class="user-dp" data-rating="4.9">
+            <img th:src="@{/img/user 4.png}" alt="user4" />
+          </div>
+          <h2 class="review-title">very easy to return/refund products</h2>
+          <p class="review">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque,
+            ullam odit modi nulla sequi eius.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- end section -->
+    <section class="end-section">
+      <div class="section-item-container">
+        <img th:src="@{/img/bg-3.png}" alt="midImg" class="section-bg" />
+        <div class="section-info">
+          <h1 class="title">order <span>now</span></h1>
+          <p class="info">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt
+            odit porro quia distinctio eum laboriosam!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer section -->
+    <footer>eShop</footer>
+
+    <!-- scripts -->
+    <script src="js/home.js"></script>
+  </body>
+</html>

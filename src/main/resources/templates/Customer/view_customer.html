@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta charset="ISO-8859-1">
+<title>View Customer Details</title>
+</head>
+<body>
+	<style>
+		table {
+			border-collapse: separate;
+			border-spacing: 15px;
+		}
+
+		td {
+			padding: 5px;
+		}
+	</style>
+	
+<div class="row">
+		<div class="col-md-7" style="width: 100px;border: 3px solid black;padding: 50px;margin: 20px;height: 900px;margin-left: 20%;">
+			<div class="mx-auto" style="width: 900px; height: 700px;">
+				<div class="container"></div>
+				<h1 style="font-family:'Courier New'; font-weight: bolder;  margin-left: 20%;">Customer Description</h1>
+				<br><br>
+				<!-- <img style="margin-left: 35%;" th:src="'http://localhost:8080/productphotos/'+${product.productId}+'.jpg'" width="200px" height="200px"> -->
+				<table th:each="customer : ${customer}">
+					
+					<tr>
+						<td style="font-weight: bolder;font-family:'Courier New';">Customer Id </td><td>:</td>
+						<td th:text="${customer.customerId}"> </td>
+					</tr>
+					<tr>
+						<td style="font-weight: bolder;font-family:'Courier New';">First Name </td><td>:</td>
+						<td th:text="${customer.fName}"> </td>
+					</tr>
+					<tr>
+						<td style="font-weight: bolder;font-family:'Courier New';">Last Name </td><td>:</td>
+						<td th:text="${customer.lName}"> </td>
+					</tr>
+					<tr>
+						<td style="font-weight: bolder;font-family:'Courier New';">Email </td><td>:</td>
+						<td th:text="${customer.email}"> </td>
+					</tr>
+					<tr>
+						<td style="font-weight: bolder;font-family:'Courier New';">Phone Number </td><td>:</td>
+						<td th:text="${customer.phone}"> </td>
+					</tr>
+					<tr>
+						<td style="font-weight: bolder;font-family:'Courier New';">Address</td><td>:</td>
+						<td th:text="${customer.address}"> </td>
+					</tr>
+					<tr>
+						<td style="font-weight: bolder;font-family:'Courier New';">City </td><td>:</td>
+						<td th:text="${customer.city}"> </td>
+					</tr>
+					<tr>
+						<td style="font-weight: bolder;font-family:'Courier New';">Country </td><td>:</td>
+						<td th:text="${customer.country}"> </td>
+					</tr>
+					<tr>
+						<td style="font-weight: bolder;font-family:'Courier New';">Province/State </td><td>:</td>
+						<td th:text="${customer.province}"> </td>
+					</tr>
+					<tr>
+						<td style="font-weight: bolder;font-family:'Courier New';">Postal Code </td><td>:</td>
+						<td th:text="${customer.postalCode}"> </td>
+					</tr>
+			
+			
+				</table>
+				<br>
+				<a  style="margin-left: 10%;" class="btn btn-primary col-md-2" href="http://localhost:8080/eshop/customer/">Back</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form method="post" action="http://localhost:8080/eshop/category/update/success">
+<table>
+<tr>
+<td>Category ID</td>
+<td><input type="text" required="required" name="category_id" readonly="readonly" th:value="${category.category_id}" /></td>
+</tr>
+<tr>
+<td>Category Name</td>
+<td><input type="text" required="required" name="category_name" th:value="${category.category_name}" /></td>
+</tr>
+
+<tr>
+<td>Alias</td>
+<td><input type="text" required="required" name="Alias" th:value="${category.Alias}"/></td>
+</tr>
+
+<tr>
+<td>Enabled</td>
+<td><select name="enabled" id="enabled" >
+<option value="1">Enabled</option>
+<option value="0">Disabled</option>
+</select></td>
+</tr>
+</table>
+<input type="submit" value="Save"/>
+</form>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="ISO-8859-1">
+    <title>Update Your Details !</title>
+</head>
+<body>
+<link rel="stylesheet" th:href="@{/styles/category_style.css}">
+
+
+
+<div class="wrapper">
+    <div class="title">
+     Your Account Details
+    </div>
+	 
+     <form method="post" action="http://localhost:8080/eshop/category/update/success">
+     <div class="form">
+       <div class="inputfield">
+          <label>Category ID</label>
+         
+		 <input type="text" required="required" name="category_id" readonly="readonly" th:value="${category.category_id}" />
+       </div>  
+	 
+	 
+	 <div class="form">
+       <div class="inputfield">
+          <label>Category Name</label>
+         
+		 <input type="text" required="required" name="category_name" th:value="${category.category_name}" />
+       </div>  
+        <div class="inputfield">
+          <label>Alias</label>
+		<input type="text" required="required" name="Alias" th:value="${category.Alias}"/>
+         
+       </div>  
+       <div class="inputfield">
+          <label>Enabled </label>
+        <select name="enabled" id="enabled" >
+           <option value="1">Enabled</option>
+           <option value="0">Disabled</option>
+         </select>
+										
+       </div>  
+     
+	   
+      <div class="inputfield terms">
+          <label class="check">
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <p>Agreed to terms and conditions</p>
+       </div> 
+      
+	  
+	  <div class="inputfield">
+	   <input type="submit" class="form-control btn btn-primary"
+						     value="Save">
+      <input type="submit" class="form-control btn btn-primary" value="Save">
+				</div>
+	 
+                                       
+        
+      </div>
+        
+      </div>
+    </div>
+</div>	
+	
+</body>
+</html>
