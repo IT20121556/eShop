@@ -12,3 +12,7 @@ FrontEnd - ```Bootstrap, Jquery, Html, Thymeleaf, css, js```,
 IDE - ```Jetbrains Intellij Idea Ultimate, Eclipse Spring STS```,
 
 ## Contributions
+### Group Leader - IT20121556 - Arachchige P.D.A.M. - Admin User Management, Admin User Authentication & Authorization
+### Member 2     - IT20122478 - Munasinghe N.N.De.Z. - Admin Category Management, Shopping Cart 
+### Member 3     - IT20075330 - Lamahewa D. - Admin Product Management, Customer Home Page
+### Member 4     - IT20127732 - Vipulasiri D.M.H.D - Admin Customer Management, Customer Authentication
